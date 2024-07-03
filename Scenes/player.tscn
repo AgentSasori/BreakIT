@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bchyk3ujr80dj"]
+
+[ext_resource type="Script" path="res://Scenes/scripts/player.gd" id="1_sewon"]
+[ext_resource type="Texture2D" uid="uid://dsxqy0kff0ti2" path="res://Scenes/graphics/paddles_and_balls.png" id="2_y874d"]
+[ext_resource type="Texture2D" uid="uid://5fkyaunavhrw" path="res://Scenes/graphics/sidegun.png" id="3_33gah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw6vm"]
+atlas = ExtResource("2_y874d")
+region = Rect2(64, 7, 32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88kp5"]
+size = Vector2(96, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tnlb"]
+size = Vector2(112, 32)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 5
+script = ExtResource("1_sewon")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-48, -13)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_dw6vm")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_88kp5")
+
+[node name="Sprite2D_Left_Gun" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-54, -5)
+rotation = -1.5708
+texture = ExtResource("3_33gah")
+
+[node name="Sprite2D3_Right_Gun" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(54, -5)
+rotation = -1.5708
+texture = ExtResource("3_33gah")
+flip_v = true
+
+[node name="MarkerLeft" type="Marker2D" parent="."]
+position = Vector2(-56, -40)
+
+[node name="MarkerRight" type="Marker2D" parent="."]
+position = Vector2(56, -40)
+
+[node name="Timer_Guns" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3tnlb")
+
+[connection signal="timeout" from="Timer_Guns" to="." method="_on_timer_guns_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

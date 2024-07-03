@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c25c76x0tghct"]
+
+[sub_resource type="Gradient" id="Gradient_l4v4g"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[node name="Brick_Destruction" type="CPUParticles2D"]
+emitting = false
+amount = 64
+lifetime = 0.5
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(32, 16)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color = Color(0.862745, 0, 0.215686, 1)
+color_ramp = SubResource("Gradient_l4v4g")

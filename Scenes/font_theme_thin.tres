@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://x2rhaw745sol"]
+
+[ext_resource type="FontFile" uid="uid://b7yxu7bpjtv7m" path="res://Scenes/kenvector_future_thin.ttf" id="1_2paow"]
+
+[resource]
+Label/fonts/font = ExtResource("1_2paow")

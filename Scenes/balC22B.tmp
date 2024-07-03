@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfb664kkr8tt1"]
+
+[ext_resource type="Script" path="res://Scenes/scripts/ball.gd" id="1_xt8lg"]
+[ext_resource type="Texture2D" uid="uid://dsxqy0kff0ti2" path="res://Scenes/graphics/paddles_and_balls.png" id="2_f14l7"]
+[ext_resource type="AudioStream" uid="uid://cmryru1mfs33f" path="res://Scenes/graphics/421469__jaszunio15__click_149.wav" id="3_w71ml"]
+[ext_resource type="AudioStream" uid="uid://dx1bjp3qaky3c" path="res://Scenes/sounds/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3" id="4_v6ejj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2r3gl"]
+radius = 13.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4cxm"]
+atlas = ExtResource("2_f14l7")
+region = Rect2(144, 24, 8, 8)
+
+[sub_resource type="Gradient" id="Gradient_3ekp6"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="Ball" type="CharacterBody2D" groups=["ball"]]
+collision_mask = 3
+script = ExtResource("1_xt8lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2r3gl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_c4cxm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.3
+one_shot = true
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 16.51
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.141176, 1, 1, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 32
+lifetime = 0.3
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 16.51
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.890196, 0.435294, 0.0823529, 1)
+color_ramp = SubResource("Gradient_3ekp6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AudioBrick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_w71ml")
+
+[node name="AudioBonus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v6ejj")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

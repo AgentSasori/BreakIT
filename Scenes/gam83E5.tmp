@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8niqa1f6n7nm"]
+
+[ext_resource type="PackedScene" uid="uid://bchyk3ujr80dj" path="res://Scenes/player.tscn" id="1_gn7oa"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_voqei"]
+[ext_resource type="PackedScene" uid="uid://jgrafybcaijh" path="res://Scenes/wall.tscn" id="2_xuxvo"]
+[ext_resource type="PackedScene" uid="uid://k7ysxrpmslxq" path="res://Scenes/roof.tscn" id="3_sy1y6"]
+[ext_resource type="PackedScene" uid="uid://dfb664kkr8tt1" path="res://Scenes/ball.tscn" id="4_1i1kq"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_voqei")
+
+[node name="Player" parent="." instance=ExtResource("1_gn7oa")]
+position = Vector2(379, 389)
+scale = Vector2(1, 0.1)
+
+[node name="Wall" parent="." instance=ExtResource("2_xuxvo")]
+position = Vector2(-47, 397)
+
+[node name="Wall2" parent="." instance=ExtResource("2_xuxvo")]
+position = Vector2(848, 400)
+
+[node name="Roof" parent="." instance=ExtResource("3_sy1y6")]
+
+[node name="Floor" parent="." instance=ExtResource("3_sy1y6")]
+position = Vector2(0, 648)
+
+[node name="Ball" parent="." instance=ExtResource("4_1i1kq")]
+visible = true
+position = Vector2(372, 195)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 798.0
+offset_bottom = 597.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -15.5
+offset_right = 50.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GO!"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

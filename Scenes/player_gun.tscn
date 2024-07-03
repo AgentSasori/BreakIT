@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgffm8ldajbj0"]
+
+[ext_resource type="Texture2D" uid="uid://5fkyaunavhrw" path="res://Scenes/graphics/sidegun.png" id="1_uo31x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrc26"]
+size = Vector2(128, 20)
+
+[node name="Player_Gun" type="StaticBody2D"]
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(56, 0)
+rotation = -1.5708
+texture = ExtResource("1_uo31x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-56, 0)
+rotation = -1.5708
+texture = ExtResource("1_uo31x")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mrc26")

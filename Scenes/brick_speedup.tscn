@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bju7bifxbvbto"]
+
+[ext_resource type="Script" path="res://Scenes/scripts/brick.gd" id="1_p8i8d"]
+[ext_resource type="Texture2D" uid="uid://bqjtm8yi6choy" path="res://Scenes/graphics/brickout-speedup.png" id="2_hodql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmw7"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5gih"]
+size = Vector2(64, 20)
+
+[node name="Brick" type="StaticBody2D" groups=["bonus", "brick", "speedup"]]
+script = ExtResource("1_p8i8d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_hodql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sdmw7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_g5gih")

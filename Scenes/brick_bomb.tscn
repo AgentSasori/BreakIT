@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0m2ogx8q3jyr"]
+
+[ext_resource type="Script" path="res://Scenes/scripts/brick.gd" id="1_5s2uq"]
+[ext_resource type="Texture2D" uid="uid://dosdx50du4a2i" path="res://Scenes/graphics/brickout-bomb.png" id="2_0ohut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmw7"]
+size = Vector2(64, 32)
+
+[node name="Brick" type="StaticBody2D" groups=["bomb", "bonus", "brick"]]
+script = ExtResource("1_5s2uq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_0ohut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sdmw7")

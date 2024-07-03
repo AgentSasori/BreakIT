@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://k7ysxrpmslxq"]
+
+[ext_resource type="Texture2D" uid="uid://d03rx5lsylqsw" path="res://Scenes/icon.svg" id="1_17thm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d036i"]
+size = Vector2(800, 16)
+
+[node name="Roof" type="StaticBody2D" groups=["wall"]]
+position = Vector2(0, -48)
+collision_layer = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_repeat = 2
+position = Vector2(400, 0)
+texture = ExtResource("1_17thm")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(400, 56)
+shape = SubResource("RectangleShape2D_d036i")

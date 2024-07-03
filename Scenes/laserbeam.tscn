@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkimmo4rrdckk"]
+
+[ext_resource type="Texture2D" uid="uid://fu4h24kco3d6" path="res://Scenes/graphics/laserbeam.png" id="1_2lrgh"]
+[ext_resource type="Script" path="res://Scenes/scripts/bullet.gd" id="1_dm3ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x8t2"]
+size = Vector2(5.33333, 16)
+
+[node name="Laserbeam" type="Area2D" groups=["bullet"]]
+scale = Vector2(3, 3)
+script = ExtResource("1_dm3ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2x8t2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_2lrgh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
