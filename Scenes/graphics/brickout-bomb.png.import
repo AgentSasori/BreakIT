@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dosdx50du4a2i"
-path="res://.godot/imported/brickout-bomb.png-84da63d206a1c6fad5a85b2e749db014.ctex"
+path="res://.godot/imported/brickout-bomb.png-59af39cbf43549d94abb324d5dc13f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/graphics/brickout-bomb.png"
-dest_files=["res://.godot/imported/brickout-bomb.png-84da63d206a1c6fad5a85b2e749db014.ctex"]
+source_file="res://scenes/graphics/brickout-bomb.png"
+dest_files=["res://.godot/imported/brickout-bomb.png-59af39cbf43549d94abb324d5dc13f4b.ctex"]
 
 [params]
 

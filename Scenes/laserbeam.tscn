@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkimmo4rrdckk"]
 
-[ext_resource type="Texture2D" uid="uid://fu4h24kco3d6" path="res://Scenes/graphics/laserbeam.png" id="1_2lrgh"]
+[ext_resource type="Texture2D" uid="uid://fu4h24kco3d6" path="res://scenes/graphics/laserbeam.png" id="1_2lrgh"]
 [ext_resource type="Script" path="res://Scenes/scripts/bullet.gd" id="1_dm3ts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x8t2"]

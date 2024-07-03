@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://c8niqa1f6n7nm"]
 
 [ext_resource type="Script" path="res://Scenes/scripts/game.gd" id="1_voqei"]
-[ext_resource type="Texture2D" uid="uid://ct2h2ci7w6g6r" path="res://Scenes/graphics/background.png" id="2_ktthm"]
-[ext_resource type="PackedScene" uid="uid://jgrafybcaijh" path="res://Scenes/wall.tscn" id="2_xuxvo"]
-[ext_resource type="FontFile" uid="uid://b8dlgvgbqibm1" path="res://Scenes/kenvector_future.ttf" id="3_okxcf"]
-[ext_resource type="PackedScene" uid="uid://k7ysxrpmslxq" path="res://Scenes/roof.tscn" id="3_sy1y6"]
-[ext_resource type="PackedScene" uid="uid://dfb664kkr8tt1" path="res://Scenes/ball.tscn" id="4_1i1kq"]
-[ext_resource type="Theme" uid="uid://x2rhaw745sol" path="res://Scenes/font_theme_thin.tres" id="4_3ijsk"]
-[ext_resource type="AudioStream" uid="uid://vo4borfylcnf" path="res://Scenes/sounds/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3" id="7_p377h"]
+[ext_resource type="Texture2D" uid="uid://ct2h2ci7w6g6r" path="res://scenes/graphics/background.png" id="2_ktthm"]
+[ext_resource type="PackedScene" uid="uid://jgrafybcaijh" path="res://scenes/wall.tscn" id="2_xuxvo"]
+[ext_resource type="FontFile" uid="uid://b8dlgvgbqibm1" path="res://scenes/kenvector_future.ttf" id="3_okxcf"]
+[ext_resource type="PackedScene" uid="uid://k7ysxrpmslxq" path="res://scenes/roof.tscn" id="3_sy1y6"]
+[ext_resource type="PackedScene" uid="uid://dfb664kkr8tt1" path="res://scenes/ball.tscn" id="4_1i1kq"]
+[ext_resource type="Theme" uid="uid://x2rhaw745sol" path="res://scenes/font_theme_thin.tres" id="4_3ijsk"]
+[ext_resource type="AudioStream" uid="uid://vo4borfylcnf" path="res://scenes/sounds/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3" id="7_p377h"]
 
 [sub_resource type="Gradient" id="Gradient_63jpo"]
 offsets = PackedFloat32Array(0, 0.185393, 0.516854, 0.814607, 1)
@@ -37,7 +37,7 @@ texture = ExtResource("2_ktthm")
 
 [node name="FX_Highscore" type="CPUParticles2D" parent="."]
 visible = false
-position = Vector2(173, 591)
+position = Vector2(200, 576)
 amount = 64
 lifetime = 0.2
 speed_scale = 0.4
@@ -77,13 +77,15 @@ offset_bottom = 600.0
 
 [node name="_BUGS" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 456.0
-offset_right = 350.0
-offset_bottom = 505.0
-text = "- Beim Neustart wird Logo nicht ausgeblendet
+offset_left = -8.0
+offset_top = 440.0
+offset_right = 369.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.298039)
+text = "Bekannte Bugs:
 - Bombe arbeitet nicht korrekt
-- Panel drehen unvollständig"
+- Panel drehen unvollständig
+- Nach finish wird kein neues Spielfeld aufgebaut"
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
@@ -154,8 +156,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = -23.0
+offset_left = -62.0
+offset_top = -25.0
+offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("4_3ijsk")
@@ -192,12 +195,12 @@ text = "FPS"
 [node name="Highscore" type="Label" parent="Control"]
 visible = false
 layout_mode = 0
-offset_left = 112.0
+offset_left = 128.0
 offset_top = 550.0
-offset_right = 180.0
+offset_right = 200.0
 offset_bottom = 573.0
 theme = ExtResource("4_3ijsk")
-text = "HIGHSCORE"
+text = "HIGHEST"
 
 [node name="Unpause" type="Button" parent="Control"]
 process_mode = 2
@@ -224,6 +227,15 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
+[node name="Credits" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 496.0
+offset_right = 774.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
+
 [node name="Wall_Left" parent="." instance=ExtResource("2_xuxvo")]
 position = Vector2(-8, 400)
 
@@ -244,6 +256,10 @@ autostart = true
 
 [node name="Timer_Highscore" type="Timer" parent="."]
 wait_time = 20.0
+
+[node name="Timer_Credits" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [node name="Ball" parent="." instance=ExtResource("4_1i1kq")]
 
@@ -289,5 +305,6 @@ text = "Player Guns	"
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer_FPS" to="." method="_on_timer_fps_timeout"]
 [connection signal="timeout" from="Timer_Highscore" to="." method="_on_timer_highscore_timeout"]
+[connection signal="timeout" from="Timer_Credits" to="." method="_on_timer_credits_timeout"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="toggled" from="DebugUI/VBoxContainer/Guns" to="." method="_on_guns_toggled"]

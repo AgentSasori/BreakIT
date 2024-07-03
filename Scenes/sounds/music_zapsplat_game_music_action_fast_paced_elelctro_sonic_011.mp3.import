@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://vo4borfylcnf"
-path="res://.godot/imported/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3-007f0c153e060e1c26347ef953c39425.mp3str"
+path="res://.godot/imported/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3-7aa2fcca66f9dc1862d31d4196334c5a.mp3str"
 
 [deps]
 
-source_file="res://Scenes/sounds/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3"
-dest_files=["res://.godot/imported/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3-007f0c153e060e1c26347ef953c39425.mp3str"]
+source_file="res://scenes/sounds/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3"
+dest_files=["res://.godot/imported/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3-7aa2fcca66f9dc1862d31d4196334c5a.mp3str"]
 
 [params]
 

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Minigame_Breakout"
+config/name="BreakIT"
 config/description="Break-IT"
 config/version="1.0"
 run/main_scene="res://Scenes/game.tscn"

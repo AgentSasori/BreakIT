@@ -75,7 +75,7 @@ func handle_input(delta):
 	if Input.is_action_just_released("ui_pause"):
 		emit_signal("game_paused")
 		get_tree().paused = true
-	if Input.is_action_just_pressed("ui_fire"):
+	if Input.is_action_just_pressed("ui_fire"): # left mousebutten
 		if can_fire and guns_enabled:
 			_spawn_bullet()
 	velocity.x = direction_x * delta * speed

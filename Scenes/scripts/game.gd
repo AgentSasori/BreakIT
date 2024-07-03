@@ -5,6 +5,7 @@ extends Node2D
 
 # Constants
 var SPRITE_MULITPLIER : int = 2
+const version = 0.3
 
 # Simple Vars
 var debug : bool = true
@@ -38,6 +39,13 @@ var bonus_brick_list = [
 	preload("res://Scenes/brick_loot.tscn"),
 	]
 
+var credits = [
+	"credits:game",
+	"AgentSasori:coding",
+	"zapsplat:music",
+	"opengameart:graphics",
+]
+
 # Onready vars
 @onready var BallsLabel = $Control/Balls
 @onready var ScoreLabel = $Control/Score
@@ -68,9 +76,7 @@ func _ready():
 	# Set volume
 	_on_bg_music_slider_value_changed(0.5)
 	$Control/BGMusicSlider.value = 0.5
-	# create brick-field
-	#create_bricks(100, 100, 3, 10)
-	show_logo(true)
+	_show_menu(true)
 	$Music.play()
 
 func spawn_bullet(pos_left, pos_right):
@@ -85,10 +91,13 @@ func game_paused():
 	$Control/Unpause.show()
 	
 func show_logo(_visible:bool = true):
-	if _visible	:
-		logonode = LogoNode.instantiate()
-		add_child(logonode)
-		logonode.position = position		
+	if _visible == true:
+		if !logonode:
+			logonode = LogoNode.instantiate()
+			add_child(logonode)
+			logonode.position = position
+		else:
+			print("Logo already exists")
 	else:
 		if logonode != null:
 			logonode.queue_free()
@@ -100,7 +109,7 @@ func brick_destroyed(bricknode):
 	brick_nodes.erase(bricknode)
 	# destroy it
 	#bricknode.queue_free()
-	print("Brick has been destroyed and will be erased from list: ", bricknode)
+	#print("Brick has been destroyed and will be erased from list: ", bricknode)
 
 func update_stats():
 	if state > 0:
@@ -117,14 +126,13 @@ func update_stats():
 		FPSLabel.show()
 		FPSLabel.text = "FPS: " + str(Engine.get_frames_per_second())
 		HighscoreLabel.show()
-		HighscoreLabel.text = "Highscore: " + str(highscore)
+		HighscoreLabel.text = "Highest: " + str(highscore)
 
 func game_over():
 	print("GAME OVER. Score: ", score)
 	state = 0
 	$Ball.speed = 300
 	_show_menu(true)
-	show_logo(true)
 	# delete player
 	player.queue_free()
 	# delete all bricks 
@@ -134,7 +142,7 @@ func game_over():
 			b.queue_free()
 	brick_nodes.clear()
 
-func reset_game():
+func reset_game_stats():
 	print("Score: ", score, " of total bricks: ", brick_nodes.size())
 	state = 0
 	score = 0
@@ -161,13 +169,11 @@ func ball_down():
 	else:
 		if score > highscore:
 			_new_highscore()
-		else:
-			print("GAME OVER")
-			BonusLabel.text = "GAME OVER"
-			BonusLabel.show()
+		print("GAME OVER")
+		BonusLabel.text = "GAME OVER"
+		BonusLabel.show()
 		$Timer.start()
 		game_over()
-		show_logo(true)
 		
 func score_up():
 	update_stats()
@@ -205,7 +211,7 @@ func bonus(type):
 			print("Send selfdestroy to ", destroying, " of " , brick_nodes.size() , " bricks")
 		"loot":
 			BonusLabel.text = "LOOTBOX"
-			PlayerNode.enable_guns(true)
+			player.enable_guns(true)
 			
 	#BonusLabel.transform.scale = 1.0
 	BonusLabel.show()
@@ -230,7 +236,7 @@ func create_bricks(posx:int = 50, posy:int = 50, rows:int = 5, columns:int = 10)
 			if randi() % (rows * columns) > 3:
 				var newbrick
 				# randomize for a bonus brick
-				if randi() % (rows * columns) == 0:
+				if randi() % 2 == 0: # (rows * columns)
 					newbrick = bonus_brick_list[randi_range(0, bonus_brick_list.size() - 1)].instantiate()
 				else:
 					newbrick = brick.instantiate()
@@ -260,16 +266,18 @@ func _show_menu(_visible:bool = true):
 		$Control/BGMusicSlider.show()
 		BugsLabel.show()
 		show_logo(true)
+		$Control/Credits.show()
 	else:
 		$Control/Button.hide()
 		# hide the music-stuff
 		$Control/BGMusicSlider.hide()
 		BugsLabel.hide()
 		show_logo(false)
+		$Control/Credits.hide()
 	
 func _on_button_pressed():
 	# reset stats etc
-	reset_game()
+	reset_game_stats()
 	# spawn the player
 	player = PlayerNode.instantiate()
 	add_child(player)
@@ -285,8 +293,6 @@ func _on_button_pressed():
 	# update the stats
 	update_stats()
 	state = 1
-	# hide the logo
-	show_logo(false)
 	# Show button and slider
 	_show_menu(false)
 
@@ -315,3 +321,8 @@ func _on_bg_music_slider_value_changed(value):
 func _on_guns_toggled(toggled_on):
 	print(toggled_on)
 	PlayerNode.enable_guns(toggled_on)
+
+func _on_timer_credits_timeout():
+	$Control/Credits.text = credits.pick_random()
+	
+	

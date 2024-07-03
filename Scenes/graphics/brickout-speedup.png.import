@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqjtm8yi6choy"
-path="res://.godot/imported/brickout-speedup.png-5c8929bf4b35231ecee421854cbe3a66.ctex"
+path="res://.godot/imported/brickout-speedup.png-0b4c2be821c7a501898d3ed60f02b54a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/graphics/brickout-speedup.png"
-dest_files=["res://.godot/imported/brickout-speedup.png-5c8929bf4b35231ecee421854cbe3a66.ctex"]
+source_file="res://scenes/graphics/brickout-speedup.png"
+dest_files=["res://.godot/imported/brickout-speedup.png-0b4c2be821c7a501898d3ed60f02b54a.ctex"]
 
 [params]
 
