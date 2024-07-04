@@ -236,7 +236,7 @@ func create_bricks(posx:int = 50, posy:int = 50, rows:int = 5, columns:int = 10)
 			if randi() % (rows * columns) > 3:
 				var newbrick
 				# randomize for a bonus brick
-				if randi() % 2 == 0: # (rows * columns)
+				if randi() % (rows * columns) == 0: # (rows * columns)
 					newbrick = bonus_brick_list[randi_range(0, bonus_brick_list.size() - 1)].instantiate()
 				else:
 					newbrick = brick.instantiate()
