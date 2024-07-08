@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://c8niqa1f6n7nm"]
 
 [ext_resource type="Script" path="res://Scenes/scripts/game.gd" id="1_voqei"]
-[ext_resource type="Texture2D" uid="uid://ct2h2ci7w6g6r" path="res://scenes/graphics/background.png" id="2_ktthm"]
-[ext_resource type="PackedScene" uid="uid://jgrafybcaijh" path="res://scenes/wall.tscn" id="2_xuxvo"]
-[ext_resource type="FontFile" uid="uid://b8dlgvgbqibm1" path="res://scenes/kenvector_future.ttf" id="3_okxcf"]
-[ext_resource type="PackedScene" uid="uid://k7ysxrpmslxq" path="res://scenes/roof.tscn" id="3_sy1y6"]
-[ext_resource type="PackedScene" uid="uid://dfb664kkr8tt1" path="res://scenes/ball.tscn" id="4_1i1kq"]
-[ext_resource type="Theme" uid="uid://x2rhaw745sol" path="res://scenes/font_theme_thin.tres" id="4_3ijsk"]
-[ext_resource type="AudioStream" uid="uid://vo4borfylcnf" path="res://scenes/sounds/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3" id="7_p377h"]
+[ext_resource type="Texture2D" uid="uid://ct2h2ci7w6g6r" path="res://Scenes/graphics/background.png" id="2_ktthm"]
+[ext_resource type="PackedScene" uid="uid://jgrafybcaijh" path="res://Scenes/wall.tscn" id="2_xuxvo"]
+[ext_resource type="FontFile" uid="uid://b8dlgvgbqibm1" path="res://Scenes/kenvector_future.ttf" id="3_okxcf"]
+[ext_resource type="PackedScene" uid="uid://k7ysxrpmslxq" path="res://Scenes/roof.tscn" id="3_sy1y6"]
+[ext_resource type="PackedScene" uid="uid://dfb664kkr8tt1" path="res://Scenes/ball.tscn" id="4_1i1kq"]
+[ext_resource type="Theme" uid="uid://x2rhaw745sol" path="res://Scenes/font_theme_thin.tres" id="4_3ijsk"]
+[ext_resource type="AudioStream" uid="uid://vo4borfylcnf" path="res://Scenes/sounds/music_zapsplat_game_music_action_fast_paced_elelctro_sonic_011.mp3" id="7_p377h"]
 
 [sub_resource type="Gradient" id="Gradient_63jpo"]
 offsets = PackedFloat32Array(0, 0.185393, 0.516854, 0.814607, 1)

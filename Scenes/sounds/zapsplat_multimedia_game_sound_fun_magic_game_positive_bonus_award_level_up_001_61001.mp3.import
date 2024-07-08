@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dx1bjp3qaky3c"
-path="res://.godot/imported/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3-7825bb5307963cd78862497f1936c726.mp3str"
+path="res://.godot/imported/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3-437b39d1f13625b568722c3522e7e299.mp3str"
 
 [deps]
 
-source_file="res://scenes/sounds/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3"
-dest_files=["res://.godot/imported/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3-7825bb5307963cd78862497f1936c726.mp3str"]
+source_file="res://Scenes/sounds/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3"
+dest_files=["res://.godot/imported/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3-437b39d1f13625b568722c3522e7e299.mp3str"]
 
 [params]
 

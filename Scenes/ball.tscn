@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dfb664kkr8tt1"]
 
 [ext_resource type="Script" path="res://Scenes/scripts/ball.gd" id="1_xt8lg"]
-[ext_resource type="Texture2D" uid="uid://dsxqy0kff0ti2" path="res://scenes/graphics/paddles_and_balls.png" id="2_f14l7"]
-[ext_resource type="AudioStream" uid="uid://cmryru1mfs33f" path="res://scenes/graphics/421469__jaszunio15__click_149.wav" id="3_w71ml"]
-[ext_resource type="AudioStream" uid="uid://dx1bjp3qaky3c" path="res://scenes/sounds/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3" id="4_v6ejj"]
+[ext_resource type="Texture2D" uid="uid://dsxqy0kff0ti2" path="res://Scenes/graphics/paddles_and_balls.png" id="2_f14l7"]
+[ext_resource type="AudioStream" uid="uid://cmryru1mfs33f" path="res://Scenes/graphics/421469__jaszunio15__click_149.wav" id="3_w71ml"]
+[ext_resource type="AudioStream" uid="uid://dx1bjp3qaky3c" path="res://Scenes/sounds/zapsplat_multimedia_game_sound_fun_magic_game_positive_bonus_award_level_up_001_61001.mp3" id="4_v6ejj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2r3gl"]
 radius = 13.0

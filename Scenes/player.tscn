@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bchyk3ujr80dj"]
 
 [ext_resource type="Script" path="res://Scenes/scripts/player.gd" id="1_sewon"]
-[ext_resource type="Texture2D" uid="uid://dsxqy0kff0ti2" path="res://scenes/graphics/paddles_and_balls.png" id="2_y874d"]
-[ext_resource type="Texture2D" uid="uid://5fkyaunavhrw" path="res://scenes/graphics/sidegun.png" id="3_33gah"]
+[ext_resource type="Texture2D" uid="uid://dsxqy0kff0ti2" path="res://Scenes/graphics/paddles_and_balls.png" id="2_y874d"]
+[ext_resource type="Texture2D" uid="uid://5fkyaunavhrw" path="res://Scenes/graphics/sidegun.png" id="3_33gah"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dw6vm"]
 atlas = ExtResource("2_y874d")

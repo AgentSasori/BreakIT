@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5fkyaunavhrw"
-path="res://.godot/imported/sidegun.png-148d209fd24c753ed7b5cf772d34754a.ctex"
+path="res://.godot/imported/sidegun.png-4962eb68bcbb2e5f6b85d8d91f4f5af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/graphics/sidegun.png"
-dest_files=["res://.godot/imported/sidegun.png-148d209fd24c753ed7b5cf772d34754a.ctex"]
+source_file="res://Scenes/graphics/sidegun.png"
+dest_files=["res://.godot/imported/sidegun.png-4962eb68bcbb2e5f6b85d8d91f4f5af6.ctex"]
 
 [params]
 

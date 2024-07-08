@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsxqy0kff0ti2"
-path="res://.godot/imported/paddles_and_balls.png-1626abda4d03eb04adb27fceb1e1f061.ctex"
+path="res://.godot/imported/paddles_and_balls.png-ccd480040b98c9ba461b53ecb2b47b04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/graphics/paddles_and_balls.png"
-dest_files=["res://.godot/imported/paddles_and_balls.png-1626abda4d03eb04adb27fceb1e1f061.ctex"]
+source_file="res://Scenes/graphics/paddles_and_balls.png"
+dest_files=["res://.godot/imported/paddles_and_balls.png-ccd480040b98c9ba461b53ecb2b47b04.ctex"]
 
 [params]
 
